@@ -27,5 +27,3 @@ pip install -r requirements.txt
 python -m uvicorn app.main:app --reload
 
 Visit: http://127.0.0.1:8000/
-
-<img width="1164" height="727" alt="Screenshot 2025-07-28 224904" src="https://github.com/user-attachments/assets/0762345e-c95c-4eac-b796-b301b7f28fca" />
