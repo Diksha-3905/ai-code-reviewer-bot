@@ -17,12 +17,12 @@ jobs:
           python-version: "3.11"
 
       - name: Install Dependencies
-        run: |
-          pip install -r requirements.txt
+        run: pip install -r requirements.txt
 
-      - name: Send Code to AI Reviewer
+      - name: Run AI Code Reviewer
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          echo "Sending PR files to AI Code Reviewer"
-          python app/github_integration.py
+          AZURE_KEY: ${{ secrets.AZURE_KEY }}
+          AZURE_ENDPOINT: ${{ secrets.AZURE_ENDPOINT }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: python app/github_integration.py
